@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "LED Score Controller",
+  "version": "1.0",
+  "description": "Contrôle ton Arduino LED via IP + auto-sync avec un site.",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": ["<all_urls>", "http://*/*", "https://*/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "LED Controller"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

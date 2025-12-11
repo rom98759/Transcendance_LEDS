@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>LED Controller</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🕹️ LED Controller</h1>
+        <p class="subtitle">Transcendance LEDs</p>
+        <div class="header-status">
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span class="status-text">Prêt</span>
+          </div>
+          <span class="ping-display">PING: --ms</span>
+        </div>
+      </div>
+
+      <div class="section config-section">
+        <label class="section-title">🌐 Adresse IP Arduino</label>
+        <div class="input-group">
+          <input id="arduino-ip" placeholder="10.185.81.101" />
+          <button id="save-ip" class="btn-primary">✓ Enregistrer</button>
+        </div>
+      </div>
+
+      <div class="section auto-section">
+        <div class="section-header">
+          <span class="section-title">⚡ Mode automatique</span>
+        </div>
+        <p class="description">Synchronisation en temps réel avec la page</p>
+        <button id="toggle-auto" class="btn-toggle">Mode Auto Inactif</button>
+      </div>
+
+      <div class="section color-section">
+        <div class="section-header">
+          <span class="section-title">🎨 Couleurs LED</span>
+        </div>
+        <p class="description">Personnalise les couleurs des joueurs</p>
+
+        <div class="color-controls">
+          <div class="color-group">
+            <label class="color-label">
+              <span class="player-icon">🔵</span>
+              <span>Player A</span>
+            </label>
+            <input type="color" id="color-a" value="#0000ff" class="color-picker" />
+          </div>
+
+          <div class="color-group">
+            <label class="color-label">
+              <span class="player-icon">🔴</span>
+              <span>Player B</span>
+            </label>
+            <input type="color" id="color-b" value="#ff0000" class="color-picker" />
+          </div>
+        </div>
+
+        <div class="brightness-control">
+          <label class="brightness-label">
+            <span>💡 Luminosité</span>
+            <span id="brightness-value">50%</span>
+          </label>
+          <input type="range" id="brightness" min="0" max="255" value="128" class="brightness-slider" />
+        </div>
+
+        <div class="color-buttons">
+          <button id="apply-colors" class="btn-primary btn-small">
+            ✓ Appliquer
+          </button>
+          <button id="reset-colors" class="btn-secondary btn-small">
+            ↻ Réinitialiser
+          </button>
+        </div>
+      </div>
+
+      <div class="section manual-section">
+        <div class="section-header">
+          <span class="section-title">🎮 Mode manuel</span>
+        </div>
+
+        <div class="player-controls">
+          <div class="player-group player-a">
+            <label class="player-label">
+              <span class="player-icon">🔵</span>
+              <span>Player A</span>
+            </label>
+            <input id="manual-a" type="number" min="0" max="5" value="0" class="score-input" />
+          </div>
+
+          <div class="vs-divider">VS</div>
+
+          <div class="player-group player-b">
+            <label class="player-label">
+              <span class="player-icon">🔴</span>
+              <span>Player B</span>
+            </label>
+            <input id="manual-b" type="number" min="0" max="5" value="0" class="score-input" />
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="send-score" class="btn-primary btn-large">
+            📤 Envoyer Score
+          </button>
+          <button id="reset" class="btn-reset">
+            🔄 Reset
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Victory Overlay -->
+    <div id="victory-overlay" class="victory-overlay hidden">
+      <div class="victory-content">
+        <div class="victory-title"></div>
+        <div class="victory-subtitle">VICTOIRE</div>
+        <div class="victory-stars">⭐️🏆⭐️</div>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
