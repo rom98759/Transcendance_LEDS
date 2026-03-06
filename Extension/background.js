@@ -25,7 +25,7 @@ async function sendRequest(url) {
 chrome.runtime.onMessage.addListener((msg, sender) => {
     chrome.storage.sync.get("arduinoIP", ({ arduinoIP }) => {
         if (!arduinoIP) {
-            console.error('IP Arduino non configurée');
+            console.error('IP non configurée');
             return;
         }
 

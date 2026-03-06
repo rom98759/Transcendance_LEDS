@@ -87,11 +87,14 @@ Système complet de scoreboard LED contrôlé via une extension Chrome, avec ani
 #### Prérequis
 - Arduino IDE 2.x
 - Support ESP8266 installé
+  - Installer le support ESP8266 (boards Wemos)
+    - File → Preferences → Additional Boards Manager URLs
+    - Lien : http://arduino.esp8266.com/stable/package_esp8266com_index.json
 - Bibliothèques :
-  - `Adafruit_NeoPixel`
-  - `ESP8266WiFi`
-  - `ESP8266WebServer`
-  - `ESP8266HTTPClient`
+  - `Adafruit_NeoPixel` (installable via Library Manager)
+  - `ESP8266WiFi` (inclus avec le support ESP8266)
+  - `ESP8266WebServer` (inclus avec le support ESP8266)
+  - `ESP8266HTTPClient` (inclus avec le support ESP8266)
 
 #### Configuration
 1. Ouvrir `Arduino_src/score_leds/score_leds.ino`
